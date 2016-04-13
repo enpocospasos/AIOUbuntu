@@ -71,11 +71,6 @@ sudo apt-get remove  --yes --quiet transmission-gtk
 #Instalando todos los programas
 echo Instalando todos los programas
 sudo apt-get -q -y install ubuntu-restricted-extras rar unace p7zip-full p7zip-rar sharutils mpack synaptic aptitude gdebi dconf-tools qbittorrent rhythmbox python-libproxy python-pylast python-pip libreoffice wine gimp-data gimp-data-extras gimp-help-es gimp-lensfun gimp-plugin-registry amule fontypython preload g++ bum myspell-es gimp gimp-data-extras gimp-help-es gimp-plugin-registry gimp-gmic gimp-gutenprint gimp-dcraw cheese skype oracle-java9-installer firefox-locale-es thunderbird-locale-es thunderbird-locale-es-es libreoffice-l10n-es language-pack-es language-pack-en-base blender audacity vlc libdvdread4 gnome-system-tools linux-generic linux-headers-generic linux-image-generic hfsplus hfsutils hfsprogs ntfs-config curl wget lshw sublime-text-installer grive brackets spotify-client inkscape filezilla nautilus-dropbox nautilus-admin mysql-workbench google-drive-ocamlfuse git virtualbox-5.0
-#Instalando Vivaldi Browser (ex Opera)
-wget https://download.vivaldi.com/stable/vivaldi-stable_1.0.435.42-1_amd64.deb
-sudo dpkg -i vivaldi-stable_1.0.435.42-1_amd64.deb
-#No es un error, la línea ha sido repetida ya que hay que ejecutarla 2 veces para que se instale correctamente
-sudo dpkg -i vivaldi-stable_1.0.435.42-1_amd64.deb
 
 #Instalando Google Chrome
 echo ATENCION Google chrome puede no instalarse, en caso de fallo visitar web oficial
@@ -128,5 +123,4 @@ echo Dale todo a Siguiente y en el último paso indicar activar ctrl + alt + bac
 sudo dpkg-reconfigure keyboard-configuration
 #Añadiendo el usuario al grupo de virtualbox para poder usar los USBs
 sudo addgroup $USER vboxusers
-
 exit
