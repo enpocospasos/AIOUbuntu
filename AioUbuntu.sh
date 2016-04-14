@@ -7,9 +7,9 @@ echo Visita mi web http://www.epocospasos.wordpress.com
 echo Proyecto Github https://github.com/enpocospasos/AIOUbuntu
 echo Este script está creado sin fines de lucro, los software instalados pertenecen a sus respectivos fabricantes.
 echo AVISO: Algunos repositorios pueden cambiar con el tiempo.
-echo Aunque esta testeado (en Ubuntu 15.10 y 14.04), optimizado y corroborado todo de que es funcional, no se ha testeado en todas
+echo Aunque esta testeado en Ubuntu 15.10 y 14.04, optimizado y corroborado todo de que es funcional, no se ha testeado en todas
 echo las distribuciones, ni en todos los ordenadores. Por lo que la ejecucion del script corre a cuenta del usuario que lo inicialice.
-echo No me responsabilizo de posibles alteraciones del scirpt, o daños causados por agentes externos o por el mismo codigo (remarco el que no ha sido testeado en todas las distribuciones).
+echo No me responsabilizo de posibles alteraciones del scirpt, o daños causados por agentes externos o por el mismo codigo.
 echo Por favor, si ha encontrado algun error o problema, notifiquelo al correo: enpocospasos@gmail.com.
 echo para arreglarlo en futuras versiones
 #Copiando sources.list por si acaso
