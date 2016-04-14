@@ -85,12 +85,6 @@ sudo dpkg -i teamviewer_i386.deb
 wget http://vkaudiosaver.ru/downloads/vkaudiosaver-debian-amd64.deb
 sudo dpkg -i vkaudiosaver-debian-amd64.deb
 
-
-#Spotify add killer, un bloqueador de publicidad
-wget http://vkaudiosaver.ru/downloads/vkaudiosaver-debian-amd64
-sudo dpkg -i vkaudiosaver-debian-amd64
-
-
 # Optimizando sistema de reproducción de DVD
 echo arreglando algunas cosas...
 sudo /usr/share/doc/libdvdread4/install-css.sh
