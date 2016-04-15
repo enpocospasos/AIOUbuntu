@@ -32,8 +32,8 @@ sudo gpg --export --armor "047F765CAC33218C" | sudo apt-key add -
 #Obteniendo repositorios
 echo Obteniendo Repositorios
 sudo echo "deb http://archive.canonical.com/ubuntu $(lsb_release -s -c) partner" \ | sudo tee -a /etc/apt/sources.list > /dev/null
-sudo echo "deb http://archive.getdeb.net/ubuntu vivid-getdeb apps" \ | sudo tee -a /etc/apt/sources.list > /dev/null
-sudo echo "deb http://archive.getdeb.net/ubuntu vivid-getdeb games" \ | sudo tee -a /etc/apt/sources.list > /dev/null
+sudo echo "deb http://archive.getdeb.net/ubuntu $(lsb_release -s -c)-getdeb apps" \ | sudo tee -a /etc/apt/sources.list > /dev/null
+sudo echo "deb http://archive.getdeb.net/ubuntu $(lsb_release -s -c)-getdeb games" \ | sudo tee -a /etc/apt/sources.list > /dev/null
 sudo echo "deb http://download.virtualbox.org/virtualbox/debian $(lsb_release -s -c) contrib" \ | sudo tee -a /etc/apt/sources.list > /dev/null
 sudo echo "deb http://repository.spotify.com stable non-free" \ | sudo tee -a /etc/apt/sources.list > /dev/null
 #Repositorio de Java
@@ -69,8 +69,35 @@ sudo apt-get remove  --yes --quiet deja-dup
 echo Quitando Transmission
 sudo apt-get remove  --yes --quiet transmission-gtk
 #Instalando todos los programas
-echo Instalando todos los programas
-sudo apt-get -q -y install ubuntu-restricted-extras rar unace p7zip-full p7zip-rar sharutils mpack synaptic aptitude gdebi dconf-tools qbittorrent rhythmbox python-libproxy python-pylast python-pip libreoffice wine gimp-data gimp-data-extras gimp-help-es gimp-lensfun gimp-plugin-registry amule fontypython preload g++ bum myspell-es gimp gimp-data-extras gimp-help-es gimp-plugin-registry gimp-gmic gimp-gutenprint gimp-dcraw cheese skype oracle-java9-installer firefox-locale-es thunderbird-locale-es thunderbird-locale-es-es libreoffice-l10n-es language-pack-es language-pack-en-base blender audacity vlc libdvdread4 gnome-system-tools linux-generic linux-headers-generic linux-image-generic hfsplus hfsutils hfsprogs ntfs-config curl wget lshw sublime-text-installer grive brackets spotify-client inkscape filezilla nautilus-dropbox nautilus-admin mysql-workbench google-drive-ocamlfuse git virtualbox-5.0
+echo Instalando todos los programas basicos, compresores, codecs, estos son necesarios si o si.
+sudo apt-get -q -y install ubuntu-restricted-extras rar unace p7zip-full p7zip-rar sharutils mpack synaptic aptitude gdebi dconf-tools python-libproxy python-pylast python-pip wine gimp-data gimp-data-extras gimp-help-es gimp-lensfun gimp-plugin-registry fontypython preload g++ bum myspell-es gimp-data-extras gimp-help-es gimp-plugin-registry gimp-gmic gimp-gutenprint gimp-dcraw oracle-java9-installer firefox-locale-es thunderbird-locale-es thunderbird-locale-es-es language-pack-es language-pack-en-base libdvdread4 gnome-system-tools linux-generic linux-headers-generic linux-image-generic curl wget lshw nautilus-admin virtualbox-5.0
+
+#De aquí en adelante son programas opcionales, con borrar su nombre o las líneas que correspondan seguira funcionando
+#Por ejemplo, si no necesitas gimp, quitas la palabra gimp.
+#Si por ejemplo, no usas ningún programa de edicion puedes borrar la linea correspondiente a edicion
+echo programa por si no se monta bien una unidad NTFS de Windows
+sudo apt-get -q -y install hfsplus hfsutils hfsprogs ntfs-config 
+
+echo programas para poder reproducir los discos duros en sistemas mac
+sudo apt-get -q -y install hfsplus hfsutils hfsprog
+
+echo Instalando software multimedia 
+sudo apt-get -q -y install rhythmbox cheese spotify-client vlc
+
+echo Instalando software de internet 
+sudo apt-get -q -y install qbittorrent amule skype filezilla
+
+echo Instalando software de edicion 
+sudo apt-get -q -y install audacity gimp krita inkscape blender
+
+echo Instalando software de oficina 
+sudo apt-get -q -y install libreoffice libreoffice-l10n-es
+
+echo Instalando software de programacion y base de datos
+sudo apt-get -q -y install sublime-text-installer brackets mysql-workbench
+
+echo Instalando software de nubes 
+sudo apt-get -q -y install nautilus-dropbox google-drive-ocamlfuse git
 
 #Instalando Google Chrome
 echo ATENCION Google chrome puede no instalarse, en caso de fallo visitar web oficial
@@ -102,8 +129,6 @@ echo allow-guest=false | sudo tee -a /usr/share/lightdm/lightdm.conf.d/50-ubuntu
 echo PONER EL DEFAULT=0 PARA QUITAR UN MOLESTO MENSAJE DE ERROR QUE SALE A VECES EN EL INICIO DE UBUNTU
 sudo nano /etc/default/apport
 #Quitando todo lo temporal
-sudo rm ./vivaldi-stable_1.0.435.42-1_amd64.deb
-sudo rm ./vkaudiosaver-debian-amd64
 sudo rm ./teamviewer_i386.deb
 sudo rm ./google-chrome-stable_current_amd64.deb
 sudo rm ./vkaudiosaver-debian-amd64.deb
